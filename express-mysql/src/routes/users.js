@@ -1,17 +1,20 @@
-const express = require('express');
+const express = require("express");
+
+const UserController = require("../controller/users");
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.json({
-        message: 'GET users success'
-    })
-});
+//CREATE - POST
+router.post("/", UserController.createNewUser);
 
-router.post('/', (req, res) => {
-    res.json({
-        message: 'POST users success'
-    })
-})
+//READ - GET
+router.get("/", UserController.getAllusers);
+
+
+//UPDATE - PATCH
+router.patch("/:idUser", UserController.updateUser)
+
+//DELETE - DELETE
+router.delete("/:idUser", UserController.deleteUser)
 
 module.exports = router;
