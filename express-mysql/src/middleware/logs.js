@@ -1,5 +1,5 @@
 const logRequest = (req, res, next) => {
-    console.log('terjadi request ke PATH', req.path);
+    console.log('Terjadi request ke PATH: ', req.path);
     next();
 }
 
